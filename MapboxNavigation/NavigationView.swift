@@ -10,7 +10,7 @@ import MapboxDirections
  1. InstructionsBannerView
  2. InformationStackView
  3. BottomBannerView
- 4. ResumeButton
+ 4. 
  5. WayNameLabel
  6. FloatingStackView
  7. NavigationMapView
@@ -55,6 +55,7 @@ open class NavigationView: UIView {
         static let volumeUp = UIImage(named: "volume_up", in: .mapboxNavigation, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
         static let volumeOff =  UIImage(named: "volume_off", in: .mapboxNavigation, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
         static let feedback = UIImage(named: "feedback", in: .mapboxNavigation, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+        static let resume = UIImage(named: "location", in: .mapboxNavigation, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     }
     
     lazy var mapView: NavigationMapView = {
@@ -73,10 +74,9 @@ open class NavigationView: UIView {
     }()
     
     lazy var overviewButton = FloatingButton.rounded(image: Images.overview)
+    lazy var resumeButton = FloatingButton.rounded(image: Images.resume)
     lazy var muteButton = FloatingButton.rounded(image: Images.volumeUp, selectedImage: Images.volumeOff)
     lazy var reportButton = FloatingButton.rounded(image: Images.feedback)
-    
-    lazy var resumeButton: ResumeButton = .forAutoLayout()
     
     lazy var wayNameView: WayNameView = {
         let view: WayNameView = .forAutoLayout(hidden: true)
@@ -141,7 +141,6 @@ open class NavigationView: UIView {
             mapView,
             topBannerContainerView,
             floatingStackView,
-            resumeButton,
             wayNameView,
             bottomBannerContainerView
         ]
