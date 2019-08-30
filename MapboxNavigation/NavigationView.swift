@@ -131,7 +131,7 @@ open class NavigationView: UIView {
     }
     
     func setupStackViews() {
-        floatingStackView.addArrangedSubviews([overviewButton, muteButton, reportButton])
+        floatingStackView.addArrangedSubviews([overviewButton, resumeButton, muteButton, reportButton])
     }
     
     func setupViews() {
