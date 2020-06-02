@@ -465,10 +465,7 @@ extension NavigationViewController: NavigationServiceDelegate {
             mapViewController?.labelCurrentRoad(at: rawLocation)
         }
         
-        if snapsUserLocationAnnotationToRoute,
-            userHasArrivedAndShouldPreventRerouting {
-            mapViewController?.mapView.updateCourseTracking(location: location, animated: true)
-        }
+        mapViewController?.mapView.updateCourseTracking(location: location, animated: true)
     }
     
     @objc public func navigationService(_ service: NavigationService, didPassSpokenInstructionPoint instruction: SpokenInstruction, routeProgress: RouteProgress) {
