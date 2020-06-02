@@ -358,7 +358,7 @@ extension RouteController: Router {
         }
         
         let status = navigator.getStatusForTimestamp(location.timestamp)
-        let offRoute = status.routeState == .offRoute
+        let offRoute = status.routeState == .offRoute || status.routeState == .complete
         return !offRoute
     }
     
