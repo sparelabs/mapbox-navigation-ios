@@ -20,7 +20,7 @@ open class RouteController: NSObject {
         public static let shouldRerouteFromLocation: Bool = true
         public static let shouldDiscardLocation: Bool = true
         public static let didArriveAtWaypoint: Bool = true
-        public static let shouldPreventReroutesWhenArrivingAtWaypoint: Bool = true
+        public static let shouldPreventReroutesWhenArrivingAtWaypoint: Bool = false
         public static let shouldDisableBatteryMonitoring: Bool = true
     }
     
