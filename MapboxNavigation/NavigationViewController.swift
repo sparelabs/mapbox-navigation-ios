@@ -450,14 +450,6 @@ extension NavigationViewController: NavigationServiceDelegate {
             component.navigationService?(service, didUpdate: progress, with: location, rawLocation: rawLocation)
         }
 
-        // If the user has arrived, don't snap the user puck.
-        // In the case the user drives beyond the waypoint,
-        // we should accurately depict this.
-        
-        let destination = progress.currentLeg.destination
-        let shouldPrevent = navigationService.delegate?.navigationService?(navigationService, shouldPreventReroutesWhenArrivingAt: destination) ?? RouteController.DefaultBehavior.shouldPreventReroutesWhenArrivingAtWaypoint
-        let userHasArrivedAndShouldPreventRerouting = shouldPrevent && !progress.currentLegProgress.userHasArrivedAtWaypoint
-        
         if snapsUserLocationAnnotationToRoute,
             userHasArrivedAndShouldPreventRerouting {
             mapViewController?.labelCurrentRoad(at: rawLocation, for: location)
