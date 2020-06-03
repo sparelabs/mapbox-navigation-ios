@@ -450,12 +450,7 @@ extension NavigationViewController: NavigationServiceDelegate {
             component.navigationService?(service, didUpdate: progress, with: location, rawLocation: rawLocation)
         }
 
-        if snapsUserLocationAnnotationToRoute,
-            userHasArrivedAndShouldPreventRerouting {
-            mapViewController?.labelCurrentRoad(at: rawLocation, for: location)
-        } else  {
-            mapViewController?.labelCurrentRoad(at: rawLocation)
-        }
+        mapViewController?.labelCurrentRoad(at: rawLocation, for: location)
         
         mapViewController?.mapView.updateCourseTracking(location: location, animated: true)
     }
