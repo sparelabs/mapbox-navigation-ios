@@ -231,7 +231,7 @@ open class RouteController: NSObject {
         if legProgress.remainingSteps.count <= 2 && remainingVoiceInstructions.count <= 2 {
             
             let willArrive = status.routeState == .tracking
-            let didArrive = status.routeState == .complete && currentDestination != previousArrivalWaypoint
+            let didArrive = status.routeState == .complete
             
             if willArrive {
                 
